@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", "Barlow Condensed", sans-serif;
+  --font-condensed: "Barlow Condensed", "Anton", sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f13507;
+    font-family: var(--font-sans);
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-condensed {
+  font-family: var(--font-condensed);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.writing-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+.text-ghost-stroke {
+  color: rgba(255, 255, 255, 0.05);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
+}
+
+.spotlight-radial {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.065) 0%,
+    rgba(18, 20, 26, 0.45) 32%,
+    rgba(0, 0, 0, 0) 68%
+  );
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes spinSlowCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinSlowCCW {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes flowDash {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-hud-cw {
+  animation: spinSlowCW 28s linear infinite;
+}
+
+.animate-hud-ccw {
+  animation: spinSlowCCW 20s linear infinite;
+}
+
+.animate-aero-flow {
+  stroke-dasharray: 12 18;
+  animation: flowDash 3.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hud-cw,
+  .animate-hud-ccw,
+  .animate-aero-flow {
+    animation: none;
+  }
+}

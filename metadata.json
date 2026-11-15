@@ -1,0 +1,6 @@
+{
+  "name": "SLAM DUNK — Obsidian Court 3D",
+  "description": "Luxury sports-tech 3D editorial basketball showcase in Obsidian Court and Signal Vermilion with an interactive Three.js procedural basketball.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
